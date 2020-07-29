@@ -1,14 +1,7 @@
-// import cuid from 'cuid'
-// export const cuidFn = cuid
-
-
-
-
-
-const sellersReducer = (state = { sellers: [], loading: false}, action) => {
+const buyersReducer = (state = { buyers: [], loading: false}, action) => {
 
     switch(action.type) {
-        case 'ADD_SELLER': 
+        case 'ADD_BUYER': 
 
             // const sellerObject = {
             //     // id: cuidFn(),
@@ -25,22 +18,23 @@ const sellersReducer = (state = { sellers: [], loading: false}, action) => {
             // }
             return {
                 ...state,
-                sellers: [...state.sellers, action.payload ],//action.sellerData
+                buyers: [...state.buyers, action.sellerData],
                 loading: true
             }
 
-        case 'DELETE_SELLER':
+        case 'DELETE_BUYER':
             return {
                 ...state,
-                sellers: state.sellers.filter(seller => seller.id !== action.id)     
+                buyers: state.buyers.filter(seller => seller.id !== action.id)     
             }
 
-            case 'FETCH_SELLERS':
-                return { sellers: action.payload} 
+        case 'FETCH_BUYERS':
+            return { buyers: action.payload} 
 
+               
         default:
             return state
     }       
 }
 
-export default sellersReducer
+export default buyersReducer

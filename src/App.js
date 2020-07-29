@@ -1,19 +1,31 @@
 import React from 'react';
-import SellersContainer from './containers/sellersContainer'
-
-
+import SellersContainer from './containers/SellersContainer'
+import BuyersContainer from './containers/BuyersContainer'
 import './App.css';
+import {connect} from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
+
+  render() {
+    return (
+      <div className="App">
       <SellersContainer/>
-      
-    </div>
+      <BuyersContainer/>
+      </div>
+    );
+  }
 
-
-
-  );
 }
+  
 
-export default App;
+
+  const mapStateToProps = (state) => {
+    return {
+      sellers: state.sellers,
+      buyers: state.buyers
+    }
+
+  }
+
+
+export default  connect(mapStateToProps)(App)

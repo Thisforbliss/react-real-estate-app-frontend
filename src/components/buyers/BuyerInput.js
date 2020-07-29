@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap'
-import { connect } from 'react-redux'
-import {addSeller} from '../actions/actions'
 
-class SellerInput extends Component {
+class BuyerInput extends Component {
 
-    // componentDidMount(){
-    //     fetch('http://localhost:3000/api/v1/sellers', {
-
-    //         method: 'GET'
-    //     })
-    //     .then(response => response.json())
-    //     .then(sellers => console.log("See Me", sellers))
-    // }
+  
 
 constructor() {
     super();
@@ -21,8 +12,6 @@ constructor() {
         propertyType: '',
         propertyValue: '',
         timeframe: '',
-        streetAdress: '',
-        unit: '',
         city: '',
         state: '',
         zipCode: '',
@@ -40,27 +29,21 @@ constructor() {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.addSeller(this.state)
-            // {
-            //you dont need to write all this just past the values from state with this.state.
-        //     propertyType: this.state.propertyType,
-        //     propertyValue: this.state.propertyValue,
-        //     timeframe:  this.state.timeframe,
-        //     streetAdress: this.state.streetAdress,
-        //     unit: this.state.unit,
-        //     city: this.state.city,
-        //     state: this.state.state,
-        //     zipCode: this.state.zipCode,
-        //     fullName: this.state.fullName,
-        //     phoneNumber: this.state.phoneNumber
-        // })
+        this.props.addBuyer({
+            propertyType: this.state.propertyType,
+            propertyValue: this.state.propertyValue,
+            timeframe:  this.state.timeframe,
+            city: this.state.city,
+            state: this.state.state,
+            zipCode: this.state.zipCode,
+            fullName: this.state.fullName,
+            phoneNumber: this.state.phoneNumber
+        })
 
         this.setState ={
             propertyType: '',
             propertyValue: '',
             timeframe: '',
-            streetAdress: '',
-            unit: '',
             city: '',
             state: '',
             zipCode: '',
@@ -75,28 +58,26 @@ constructor() {
           <div>
             <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
             <h2>It is { new Date().toLocaleTimeString()}.</h2>
-                <h2>Interested in selling your home? Fill Out this simple information below.</h2><br/><br/><br/>
-            <h4>What type of Property do you have? Single Family, Multi-Family, Condo, Town Home, Mobile Home, Commercial?</h4>
+                <h2>Interested in finding discounted properties from sellers and wholesalers? Fill out this information below.</h2><br/><br/><br/>
+            <h4>What type of property are you interested in? Single Family, Multi-Family, Condo, Town Home, Mobile Home, Commercial?</h4>
             <input type= 'text' name='propertyType' value={this.state.propertyType} placeholder = 'Property Type' onChange={(event) => this.handleOnChange(event)}/>
             <h4>How much is your property worth? </h4>
             <input name='propertyValue' value={this.state.propertyValue} placeholder = 'Property Value' onChange={(event) => this.handleOnChange(event)}/>
             <h4>When do you want to sell your property by?</h4>
             <input name='timeframe' value={this.state.timeframe} placeholder = 'Property Type' onChange={(event) => this.handleOnChange(event)}/>
-            <h4>What is the property address?</h4>
-            <input name='streetAdress' value={this.state.streetAdress} placeholder = 'Property Type' onChange={ this.handleOnChange}/>
-            <input name='unit' value={this.state.unit} placeholder = 'Unit' onChange={ this.handleOnChange}/>
+            <h4>Where are you interested in purchasing realestate?</h4>
             <input name='city' value={this.state.city} placeholder = 'City' onChange={(event) => this.handleOnChange(event)}/>
             <input name='state' value={this.state.state} placeholder = 'State' onChange={(event) => this.handleOnChange(event)}/>
             <input name='zipCode' value={this.state.zipcode} placeholder = 'Zip Code' onChange={(event) => this.handleOnChange(event)}/>
             <h4>Your Full Name?</h4>
             <input name='fullName' value={this.state.fullName} placeholder = 'Full Name' onChange={(event) => this.handleOnChange(event)}/>
-            <h4> Best number to reach you? </h4>
+            <h4> Best number sellers and wholesalers to reach you? </h4>
             <input name='phoneNumber' value={this.state.phoneNumber} placeholder = 'Phone Number' onChange={(event) => this.handleOnChange(event)}/>{' '}
             <Button as="input" type="submit" value="Submit" />
-            </form>      
-          </div>     
+            </form>                    
+          </div>        
         );
     }
 }
 
- export default connect(null, {addSeller})(SellerInput)
+export default BuyerInput
