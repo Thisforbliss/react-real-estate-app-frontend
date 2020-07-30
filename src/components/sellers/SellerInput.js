@@ -54,7 +54,7 @@ constructor() {
           <div>
             <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
             
-            <h2>Interested in selling your home? Fill Out this simple information below.</h2><br/><br/><br/>
+            <h2>Interested in selling your home or contract? Fill out the form below.</h2><br/><br/><br/>
             <h4>What type of Property do you have? Single Family, Multi-Family, Condo, Town Home, Mobile Home, Commercial?</h4>
             <input type= 'text' name='propertyType' value={this.state.propertyType} placeholder = 'Property Type' onChange={(event) => this.handleOnChange(event)}/>
             <h4>How much is your property worth? </h4>

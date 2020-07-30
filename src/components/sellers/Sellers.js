@@ -8,8 +8,8 @@ console.log("Buyers Data",props.buyers.buyers
 )
         return (
             <div> 
-                <h2>List Of Investors Interseted In Purchasing Your Wholesale Deal</h2>
-                <h4>Below are the investors and the type of properties they're intersted in.</h4>
+                <h2>List Of Investors Interseted In Purchasing Your Wholesale Deal</h2><br></br>
+                
                 {props.buyers.map(buyer => 
                 <div key={buyer.id}>
                     <Seller buyer={buyer} />
