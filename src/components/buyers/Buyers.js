@@ -8,7 +8,7 @@ const Buyers = (props) => {
         return (
             <div> 
                 <h2>List Of Title Holders Ready To Make A Deal</h2>
-                <h4>Below are the type of contracts the Title Holder Has</h4>
+                <h4>Below are the type of properties homeowners and wholesalers have.</h4>
                 {props.sellers.map(seller => 
                 <div key={seller.id}>
                     <Buyer seller={seller} />

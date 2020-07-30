@@ -15,9 +15,9 @@ class BuyersContainer extends Component {
     render(){
        return(
         <div>
-           <Route path='/buyers/new' render={() => <BuyerInput addSeller={this.props.addBuyer}/>}/>
+           <Route exact path='/buyers/new' render={() => <BuyerInput addSeller={this.props.addBuyer}/>}/>
             
-            <Route path='/sellers' render={() => <Buyers sellers={this.props.sellers}/>}/>
+            <Route exact path='/sellers' render={() => <Buyers sellers={this.props.sellers}/>}/>
              
         </div>
        )

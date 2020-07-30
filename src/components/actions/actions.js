@@ -2,7 +2,7 @@
 export function fetchBuyers(){
     
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/buyers')
+        fetch('http://localhost:3001/api/v1/buyers')
         .then(response => response.json())
         .then(buyers => {
             console.log(buyers)
@@ -18,7 +18,7 @@ export function fetchBuyers(){
 export function fetchSellers(){
     console.log('inside fetch sellers')
     return (dispatch) => {
-    fetch('http://localhost:3000/api/v1/sellers')
+    fetch('http://localhost:3001/api/v1/sellers')
     .then(response => response.json())
     .then(sellers => 
         { console.log ("Fetching Sellers",sellers)
@@ -30,7 +30,7 @@ export function fetchSellers(){
 
 export const addSeller = (seller) => {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/sellers',{
+        fetch('http://localhost:3001/api/v1/sellers',{
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

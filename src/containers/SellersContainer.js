@@ -16,14 +16,17 @@ class SellersContainer extends Component {
     render(){
        return(
         <div>
-            <Route path='/sellers/new' render={() => <SellerInput addSeller={this.props.addSeller}/>}/>
+            <Route exact path='/sellers/new' render={() => <SellerInput addSeller={this.props.addSeller}/>}/>,
             
-            <Route path='/buyers' render={() => <Sellers buyers={this.props.buyers}/>}/>
+            <Route exact path='/buyers' render={() => <Sellers buyers={this.props.buyers}/>}/>
              
         </div>
        )
     }
 
+
+
+    
 }
     const mapStateToProps = state => {
         return({

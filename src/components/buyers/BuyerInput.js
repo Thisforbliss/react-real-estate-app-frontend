@@ -57,8 +57,7 @@ constructor() {
         return (
           <div>
             <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
-            <h2>It is { new Date().toLocaleTimeString()}.</h2>
-                <h2>Interested in finding discounted properties from sellers and wholesalers? Fill out this information below.</h2><br/><br/><br/>
+            <h2>Interested in finding discounted properties from homeowners and wholesalers? Fill out this information below.</h2><br/><br/><br/>
             <h4>What type of property are you interested in? Single Family, Multi-Family, Condo, Town Home, Mobile Home, Commercial?</h4>
             <input type= 'text' name='propertyType' value={this.state.propertyType} placeholder = 'Property Type' onChange={(event) => this.handleOnChange(event)}/>
             <h4>How much is your property worth? </h4>
@@ -71,7 +70,7 @@ constructor() {
             <input name='zipCode' value={this.state.zipcode} placeholder = 'Zip Code' onChange={(event) => this.handleOnChange(event)}/>
             <h4>Your Full Name?</h4>
             <input name='fullName' value={this.state.fullName} placeholder = 'Full Name' onChange={(event) => this.handleOnChange(event)}/>
-            <h4> Best number sellers and wholesalers to reach you? </h4>
+            <h4> Best number for homeowners and wholesalers to reach you? </h4>
             <input name='phoneNumber' value={this.state.phoneNumber} placeholder = 'Phone Number' onChange={(event) => this.handleOnChange(event)}/>{' '}
             <Button as="input" type="submit" value="Submit" />
             </form>                    

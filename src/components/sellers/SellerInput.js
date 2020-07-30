@@ -5,14 +5,6 @@ import {addSeller} from '../actions/actions'
 
 class SellerInput extends Component {
 
-    // componentDidMount(){
-    //     fetch('http://localhost:3000/api/v1/sellers', {
-
-    //         method: 'GET'
-    //     })
-    //     .then(response => response.json())
-    //     .then(sellers => console.log("See Me", sellers))
-    // }
 
 constructor() {
     super();
@@ -41,20 +33,7 @@ constructor() {
     handleOnSubmit = event => {
         event.preventDefault()
         this.props.addSeller(this.state)
-            // {
-            //you dont need to write all this just past the values from state with this.state.
-        //     propertyType: this.state.propertyType,
-        //     propertyValue: this.state.propertyValue,
-        //     timeframe:  this.state.timeframe,
-        //     streetAdress: this.state.streetAdress,
-        //     unit: this.state.unit,
-        //     city: this.state.city,
-        //     state: this.state.state,
-        //     zipCode: this.state.zipCode,
-        //     fullName: this.state.fullName,
-        //     phoneNumber: this.state.phoneNumber
-        // })
-
+         
         this.setState ={
             propertyType: '',
             propertyValue: '',
@@ -74,8 +53,8 @@ constructor() {
         return (
           <div>
             <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
-            <h2>It is { new Date().toLocaleTimeString()}.</h2>
-                <h2>Interested in selling your home? Fill Out this simple information below.</h2><br/><br/><br/>
+            
+            <h2>Interested in selling your home? Fill Out this simple information below.</h2><br/><br/><br/>
             <h4>What type of Property do you have? Single Family, Multi-Family, Condo, Town Home, Mobile Home, Commercial?</h4>
             <input type= 'text' name='propertyType' value={this.state.propertyType} placeholder = 'Property Type' onChange={(event) => this.handleOnChange(event)}/>
             <h4>How much is your property worth? </h4>
