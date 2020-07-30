@@ -64,7 +64,7 @@ constructor() {
             <h4>How much is your property worth? </h4>
             <input name='propertyValue' value={this.state.propertyValue} placeholder = 'Property Value' onChange={(event) => this.handleOnChange(event)}/>
             <h4>When do you want to sell your property by?</h4>
-            <input name='timeframe' value={this.state.timeframe} placeholder = 'Property Type' onChange={(event) => this.handleOnChange(event)}/>
+            <input name='timeframe' value={this.state.timeframe} placeholder = 'Days You Hold Property' onChange={(event) => this.handleOnChange(event)}/>
             <h4>Where are you interested in purchasing realestate?</h4>
             <input name='city' value={this.state.city} placeholder = 'City' onChange={(event) => this.handleOnChange(event)}/>
             <input name='state' value={this.state.state} placeholder = 'State' onChange={(event) => this.handleOnChange(event)}/>
