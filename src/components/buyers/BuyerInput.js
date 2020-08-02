@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap'
+import {addBuyer} from '../actions/actions'
+import { connect } from 'react-redux'
 
 class BuyerInput extends Component {
 
@@ -11,7 +13,7 @@ constructor() {
     this.state ={
         propertyType: '',
         propertyValue: '',
-        timeframe: '',
+        timeFrame: '',
         city: '',
         state: '',
         zipCode: '',
@@ -32,7 +34,7 @@ constructor() {
         this.props.addBuyer({
             propertyType: this.state.propertyType,
             propertyValue: this.state.propertyValue,
-            timeframe:  this.state.timeframe,
+            timeFrame:  this.state.timeFrame,
             city: this.state.city,
             state: this.state.state,
             zipCode: this.state.zipCode,
@@ -43,7 +45,7 @@ constructor() {
         this.setState ={
             propertyType: '',
             propertyValue: '',
-            timeframe: '',
+            timeFrame: '',
             city: '',
             state: '',
             zipCode: '',
@@ -64,7 +66,7 @@ constructor() {
             <h4>How much is your property worth? </h4>
             <input name='propertyValue' value={this.state.propertyValue} placeholder = 'Property Value' onChange={(event) => this.handleOnChange(event)}/>
             <h4>When do you want to sell your property by?</h4>
-            <input name='timeframe' value={this.state.timeframe} placeholder = 'Days You Hold Property' onChange={(event) => this.handleOnChange(event)}/>
+            <input name='timeFrame' value={this.state.timeFrame} placeholder = 'Days You Hold Property' onChange={(event) => this.handleOnChange(event)}/>
             <h4>Where are you interested in purchasing realestate?</h4>
             <input name='city' value={this.state.city} placeholder = 'City' onChange={(event) => this.handleOnChange(event)}/>
             <input name='state' value={this.state.state} placeholder = 'State' onChange={(event) => this.handleOnChange(event)}/>
@@ -80,4 +82,4 @@ constructor() {
     }
 }
 
-export default BuyerInput
+export default connect(null, {addBuyer})(BuyerInput)

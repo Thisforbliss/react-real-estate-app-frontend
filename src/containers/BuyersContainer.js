@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BuyerInput from '../components/buyers/BuyerInput'
 import {fetchSellers} from '../components/actions/actions'
+import {addBuyer} from '../components/actions/actions'
 import Buyers from '../components/buyers/Buyers'
 import {Route} from 'react-router-dom'
 
@@ -38,4 +39,4 @@ class BuyersContainer extends Component {
     // }
 
 
-    export default connect(mapStateToProps, {fetchSellers})(BuyersContainer)
+    export default connect(mapStateToProps, {fetchSellers, addBuyer})(BuyersContainer)
