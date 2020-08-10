@@ -34,18 +34,20 @@ constructor() {
         event.preventDefault()
         this.props.addSeller(this.state)
          
-        this.setState ={
-            propertyType: '',
-            propertyValue: '',
-            timeFrame: '',
-            streetAddress: '',
-            unit: '',
-            city: '',
-            state: '',
-            zipCode: '',
-            fullName: '',
-            phoneNumber: ''
-        }
+        this.setState({
+                propertyType: '',
+                propertyValue: '',
+                timeFrame: '',
+                streetAddress: '',
+                unit: '',
+                city: '',
+                state: '',
+                zipCode: '',
+                fullName: '',
+                phoneNumber: ''
+
+        }) 
+         
     }
 
 

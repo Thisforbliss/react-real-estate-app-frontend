@@ -55,16 +55,5 @@ return (
 }
 
 export default Buyer
-{/* <li>
-        {props.seller.fullName},<br></br>
-        {props.seller.phoneNumber}, 
-        {props.seller.propertyType}, 
-        {props.seller.PropertyValue},
-        {props.seller.streetAddress},
-        {props.seller.unit},
-        {props.seller.city}, 
-        {props.seller.state}, 
-        {props.seller.zipCode} 
-        {props.seller.timeFrame}, 
-     </li>    */}
+
         

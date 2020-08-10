@@ -16,20 +16,26 @@ export function fetchBuyers(){
 
 
 export function fetchSellers(){
-    console.log('inside fetch sellers')
     return (dispatch) => {
     fetch('http://localhost:3002/api/v1/sellers')
     .then(response => response.json())
     .then(sellers => 
         { console.log ("Fetching Sellers",sellers)
-        dispatch({
-        type: 'FETCH_SELLERS', payload: sellers
-    })})
+        dispatch({type: 'FETCH_SELLERS', payload: sellers })
+        
+   })
     }
 }
 
+// export function fetchSellers(){
+//     return (dispatch) => {
+//         fetch('http://localhost:3002/api/v1/sellers')
+//         .then(response => response.json())
+//         .then(sellers => dispatch({type:'FETCH _SELLERS', payload:sellers}))
+//     }
+// }
+
 export function addSeller  (seller) {
-    console.log ('ADD SELLER FUNCTION')
     return (dispatch) => {
         fetch('http://localhost:3002/api/v1/sellers',{
             headers: {
@@ -38,16 +44,31 @@ export function addSeller  (seller) {
             },
             method: 'POST',
             body: JSON.stringify(seller)
-        }).then(response =>
-             response.json())
+        }).then(response => response.json())      
         .then(seller => dispatch({type: 'ADD_SELLER', payload: seller}))
 
 
     }
 }
 
-export function addBuyer  (buyer) {
-    console.log ('ADD Buyer FUNCTION', buyer)
+// export function addBuyer  (buyer) {
+//     console.log ('ADD Buyer FUNCTION')
+//     return (dispatch) => {
+//         fetch('http://localhost:3002/api/v1/buyers',{
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Accept': 'application/json'
+//             },
+//             method: 'POST',
+//             body: JSON.stringify(buyer)
+//         }).then(response =>
+//              response.json())
+//         .then(buyer => dispatch({type: 'ADD_BUYER', payload: buyer}))      
+
+//     }
+// }
+
+export function addBuyer(buyer){
     return (dispatch) => {
         fetch('http://localhost:3002/api/v1/buyers',{
             headers: {
@@ -55,11 +76,10 @@ export function addBuyer  (buyer) {
                 'Accept': 'application/json'
             },
             method: 'POST',
-            body: JSON.stringify(buyer)
-        }).then(response =>
-             response.json())
-        .then(seller => dispatch({type: 'ADD_BUYER', payload: buyer}))
-
+            body: JSON.stringify(buyer)})
+            .then(response => response.json())
+            .then(buyer => dispatch({type:'ADD_BUYER', payload: buyer}))
 
     }
 }
+//make youre good in react state which this.state

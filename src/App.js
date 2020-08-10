@@ -16,10 +16,10 @@ class App extends React.Component {
       <div className="App">
         <h3 className = 'm-3 d-flex justify-content-center'> </h3>
         <div>
-  <h1>
-  One Stop Shop For Executing Deals<Badge variant="secondary"></Badge>
-  </h1>
-</div>
+        <h1>
+          One Stop Shop For Executing Deals<Badge variant="secondary"></Badge>
+        </h1>
+      </div>
         <Navigation/>
       <SellersContainer/>
       <BuyersContainer/>
