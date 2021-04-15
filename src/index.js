@@ -10,7 +10,7 @@ import buyersReducer from './reducers/buyersReducer'
 import thunk from 'redux-thunk'
 import {BrowserRouter as Router} from 'react-router-dom'
 import { combineReducers } from "redux";
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
+// import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 
 
 const rootReducer = combineReducers({
